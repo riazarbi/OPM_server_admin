@@ -1,1 +1,14 @@
 
+# It is intended that eventually this will be a bash script, to be run on a Hypervisor
+# The Hypervisor should be running kvm.
+
+# wget centos atomic qcow2 file
+# mkdir cloud init directory
+# touch cloud_init/user-data
+# touch cloud_init/server-data
+# create cloud_init iso
+# attach ssh key to cloud init
+# build cockpit/ws system service into cloud init
+# command to create and launch a new virtal machine
+# networking: bridged.
+# maybe pipe out a command to show IP address hostname etc
