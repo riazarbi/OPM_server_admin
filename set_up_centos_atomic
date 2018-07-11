@@ -8,6 +8,8 @@
 # touch cloud_init/server-data
 # create cloud_init iso
 # attach ssh key to cloud init
+# Figureout a way to atomic install cockpit/ws
+# Figure out a way to install cockpit dashboard for multiple servers
 # build cockpit/ws system service into cloud init
 # command to create and launch a new virtal machine
 # networking: bridged.
