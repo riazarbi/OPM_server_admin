@@ -11,10 +11,7 @@
 # Figureout a way to atomic install cockpit/ws
 # Figure out a way to install cockpit dashboard for multiple servers
 
-sudo atomic stop cockpit/ws                                                                                                                     
-sudo atomic stop confident_payne                                                                                                                
-sudo atomic install cockpit-dashboard libssl                                                                                                    
-sudo atomic host install cockpit-dashboard libssl                                                                                               
+sudo atomic stop cockpit/ws                                                                                                                                                                                                                                                                                                                                  
 sudo atomic host install cockpit-dashboard libssh                                                                                               
 sudo rpm-ostree ex livefs                                                                                                                       
 sudo atomic run cockpit/ws 
