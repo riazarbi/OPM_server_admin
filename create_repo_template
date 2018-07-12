@@ -1,0 +1,4 @@
+mkdir tmp \
+      tmp/data \
+      tmp/code
+chmod a-w tmp
