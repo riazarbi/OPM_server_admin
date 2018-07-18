@@ -1,0 +1,12 @@
+Steps
+
+rpm-ostree install epel-release
+restart
+rpm-ostreeinstall google-authenticator
+reboot
+google-authenticator
+follow prompts
+reboot
+edit pam config
+edit ssh config
+if you lose auth you can still get in via console
