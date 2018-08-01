@@ -1,0 +1,40 @@
+# Steps to set up a minio cluster from scratch on a clean atomic host VM.
+# Assumes the VM is up, and that all JBOD drives are attached.
+
+1. Verify drive IDs
+`sudo su`
+`fdisk -l`
+
+For each drive (here I use /dev/sdb as an example):
+
+1. Partition the drive
+`fdisk /dev/sdb`
+Enter `n` `p` `1`, press Enter key twice, then enter `wq` command.
+Run `fdisk -l`
+
+2. Format the partition
+`mkfs.ext4 /dev/sdb1`
+
+3. Get the UUID
+`blkid`
+```
+/dev/sda1: UUID="412be383-2e62-442d-8d2f-34aa877217a0" TYPE="xfs" 
+/dev/sda2: UUID="UCjo23-TE6o-cFrf-gDzX-STS9-BeOB-9TApvl" TYPE="LVM2_member" 
+/dev/mapper/atomicos-root: UUID="46dc305f-3df5-4d1e-9bed-414a4e32335a" TYPE="xfs" 
+/dev/sdb1: UUID="4d82c271-9947-4143-9a55-246ab047704e" TYPE="ext4" 
+```
+
+3. Back up /etc/fstab
+`cp /etc/fstab /etc/fstab.backup`
+
+4. Make a folder
+mkdir var/mnt/data01
+
+3. Tell fstab to mount the drive
+`echo 'UUID="4d82c271-9947-4143-9a55-246ab047704e" /var/mnt/data01 ext4 defaults 0 0' >> /etc/fstab`
+
+
+4. Mount the drive
+`mount /dev/sdb1 /var/mnt/data01`
+
+Reboot to verify all works.
