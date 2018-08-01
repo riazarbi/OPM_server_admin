@@ -27,7 +27,7 @@ Run `fdisk -l`
 3. Back up /etc/fstab
 `cp /etc/fstab /etc/fstab.backup`
 
-4. Make a folder
+4. Make a folder. We make it here because on atomic host only /var is mutable, everything else gets overwritten.
 mkdir var/mnt/data01
 
 3. Tell fstab to mount the drive
